@@ -1,9 +1,10 @@
 <script setup>
-import { ref, watch } from "vue";
+import { ref } from "vue";
 const num = ref("");
 
 function openWhatapp() {
-  const url = `http://wa.me/${num.value}`;
+  const validNum = num.value.replace(/\s+/g, "");
+  const url = `http://wa.me/${validNum}`;
   window.open(url, "_blank");
 }
 </script>
@@ -23,7 +24,7 @@ function openWhatapp() {
       class="grid gap-6 w-full max-w-sm place-items-center"
     >
       <vue-tel-input
-        v-model="num"
+        v-model.trim="num"
         :dropdownOptions="{
           showDialCodeInList: true,
           showFlags: true,
@@ -39,7 +40,6 @@ function openWhatapp() {
         }"
         styleClasses="outline-none border-2 border-red-500 bg-white w-full py-1 px-3"
         showDialCode="true"
-        placeholder="daklsj"
         mode="international"
         required
       />
