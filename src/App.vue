@@ -14,7 +14,7 @@ function openWhatapp() {
     class="p-4 grid place-items-center text-center content-center min-h-screen gap-4"
   >
     <h1 class="font-bold text-green-500 text-5xl max-sm:text-4xl">
-      Instant Whatsapp Messanger
+      Instant Whatsapp Messenger
     </h1>
     <p class="text-2xl max-sm:text-xl">
       Send messages without saving the number
